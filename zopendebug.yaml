@@ -1,0 +1,21 @@
+# Licensed Materials - Property of IBM
+# (C) Copyright IBM Corporation 2021. All Rights Reserved.
+#
+# Note to U.S. Government Users Restricted Rights:
+# Use, duplication or disclosure restricted by GSA ADP Schedule
+# Contract with IBM Corp.
+apiVersion: v2
+publisher: ibm
+name: wazi-debug
+version: 0.0.1
+type: VS Code extension
+displayName: IBM Z Open Debug
+title: IBM Z Open Debug
+icon: https://raw.githubusercontent.com/IBM/zopendebug-about/master/images/ibm-z-open-debug.svg
+repository: https://github.com/IBM/zopendebug-about.git
+category: Language
+firstPublicationDate: "2021-11-25"
+spec:
+  extensions:
+  - https://raw.githubusercontent.com/nsharma1989/my-plugin-registry/master/ibm/zopendebug/1.0.1/zopendebug.vsix
+  - https://raw.githubusercontent.com/nsharma1989/my-plugin-registry/master/ibm/zopendebug-profileui/1.0.1/zopendebug-profileui.vsix

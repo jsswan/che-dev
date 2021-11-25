@@ -1,0 +1,19 @@
+# Licensed Materials - Property of IBM
+# (C) Copyright IBM Corporation 2021. All Rights Reserved.
+#
+# Note to U.S. Government Users Restricted Rights:
+# Use, duplication or disclosure restricted by GSA ADP Schedule
+# Contract with IBM Corp
+apiVersion: 1.0.0
+metadata:
+    generateName: wazidebugclient-
+projects:
+  - name: zopeneditor-sample
+    source:
+      type: git
+      location: "https://github.com/IBM/zopeneditor-sample.git"
+      branch: wazi-master
+components:
+  - type: chePlugin
+    reference: https://raw.githubusercontent.com/jsswan/che-dev/master/zopendebug.yaml
+    alias: wazi-debug
