@@ -17,5 +17,5 @@ category: Language
 firstPublicationDate: "2021-11-25"
 spec:
   extensions:
-  - https://raw.githubusercontent.com/nsharma1989/my-plugin-registry/master/ibm/zopendebug/1.0.1/zopendebug.vsix
+  - https://raw.githubusercontent.com/nsharma1989/my-plugin-registry/master/ibm/zopendebug/1.0.1/zopendebug-1.0.0.vsix
   - https://raw.githubusercontent.com/nsharma1989/my-plugin-registry/master/ibm/zopendebug-profileui/1.0.1/zopendebug-profileui.vsix
