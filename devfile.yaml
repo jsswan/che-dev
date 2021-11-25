@@ -4,16 +4,32 @@
 # Note to U.S. Government Users Restricted Rights:
 # Use, duplication or disclosure restricted by GSA ADP Schedule
 # Contract with IBM Corp
-apiVersion: 1.0.0
-metadata:
-    generateName: wazidebugclient-
-projects:
-  - name: zopeneditor-sample
-    source:
-      type: git
-      location: "https://github.com/IBM/zopeneditor-sample.git"
-      branch: wazi-master
-components:
-  - type: chePlugin
-    reference: https://raw.githubusercontent.com/jsswan/che-dev/master/zopendebug.yaml
-    alias: wazi-debug
+apiVersion: v2
+publisher: ibm
+name: wazi-developer
+version: 1.2.0
+type: VS Code extension
+displayName: Z Open Debug extensions
+icon: https://raw.githubusercontent.com/IBM/zopendebug-about/master/images/ibm-z-open-debug.svg
+repository: https://github.com/IBM/zopendebug-about.git
+category: Language
+firstPublicationDate: "2021-11-19"
+spec:
+  containers:
+  - image: docker.io/ibmcom/wazi-code-codeready:latest
+    name: ibm-wazi
+    memoryLimit: "3000Mi"
+    args:
+      - sh
+      - -c
+      - ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
+    volumes:
+    - mountPath: "/home/wazi/.zowe"
+      name: wazi
+    - mountPath: "/home/wazi/.m2"
+      name: m2
+    - mountPath: "/home/wazi/.debug"
+      name: debug
+  extensions:
+  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-1.4.1.vsix
+  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-profileui-1.4.1.vsix
