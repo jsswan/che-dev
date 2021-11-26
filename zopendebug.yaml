@@ -1,21 +1,31 @@
-# Licensed Materials - Property of IBM
-# (C) Copyright IBM Corporation 2021. All Rights Reserved.
-#
-# Note to U.S. Government Users Restricted Rights:
-# Use, duplication or disclosure restricted by GSA ADP Schedule
-# Contract with IBM Corp.
 apiVersion: v2
 publisher: ibm
-name: wazi-debug
-version: 0.0.1
+name: wazi-debug-dev
+version: 1.2.0
 type: VS Code extension
-displayName: IBM Z Open Debug
-title: IBM Z Open Debug
+displayName: Wazi Debug dev
+title: IBM Z Open Debug dev
+description: Internal debug development
 icon: https://raw.githubusercontent.com/IBM/zopendebug-about/master/images/ibm-z-open-debug.svg
 repository: https://github.com/IBM/zopendebug-about.git
 category: Language
-firstPublicationDate: "2021-11-25"
+firstPublicationDate: "2021-03-19"
 spec:
+  containers:
+  - image: docker.io/ibmcom/wazi-code-codeready:latest
+    name: ibm-wazi
+    memoryLimit: "3000Mi"
+    args:
+      - sh
+      - -c
+      - ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
+    volumes:
+    - mountPath: "/home/wazi/.zowe"
+      name: wazi
+    - mountPath: "/home/wazi/.m2"
+      name: m2
+    - mountPath: "/home/wazi/.debug"
+      name: debug
   extensions:
   - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-1.4.1.vsix
   - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-profileui-1.4.1.vsix
