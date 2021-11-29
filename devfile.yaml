@@ -1,6 +1,6 @@
 apiVersion: 1.0.0
 metadata:
-  generateName: wazidev-
+  generateName: zopendebugdev-
 components:
   - type: chePlugin
     id: ibm/wazi-developer/latest
