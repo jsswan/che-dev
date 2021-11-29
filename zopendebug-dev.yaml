@@ -1,0 +1,16 @@
+apiVersion: v2
+publisher: ibm
+name: wazi-debug-dev
+version: 0.0.1
+type: VS Code extension
+displayName: Wazi Debug dev
+title: IBM Z Open Debug dev
+description: Internal debug development
+icon: https://raw.githubusercontent.com/IBM/zopendebug-about/master/images/ibm-z-open-debug.svg
+repository: https://github.com/IBM/zopendebug-about.git
+category: Language
+firstPublicationDate: "2021-11-25"
+spec:
+  extensions:
+  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-1.4.1.vsix
+  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-profileui-1.4.1.vsix
