@@ -9,7 +9,7 @@ components:
       Zowe-Temp-Folder-Location: '{"folderPath": "/projects"}'
       zopeneditor.zapp.useDefaultOnlineZappSchema: true
   - type: chePlugin
-    reference: https://raw.githubusercontent.com/jsswan/che-dev/main/zopendebug.yaml
+    reference: https://raw.githubusercontent.com/jsswan/che-dev/main/zopendebug-dev.yaml
     alias: wazi-debug
   - type: chePlugin
     id: redhat/vscode-yaml/latest
