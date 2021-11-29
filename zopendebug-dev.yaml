@@ -12,5 +12,5 @@ category: Language
 firstPublicationDate: "2021-11-25"
 spec:
   extensions:
-  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-1.4.1.vsix
-  - https://github.com/IBM/zopendebug-about/releases/download/1.4.1/zopendebug-profileui-1.4.1.vsix
+  - https://raw.githubusercontent.com/jsswan/che-dev/main/zopendebug-1.5.0.vsix
+  - https://raw.githubusercontent.com/jsswan/che-dev/main/zopendebug-profileui-1.5.0.vsix
