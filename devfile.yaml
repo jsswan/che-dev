@@ -1,13 +1,26 @@
-# Licensed Materials - Property of IBM
-# (C) Copyright IBM Corporation 2021. All Rights Reserved.
-#
-# Note to U.S. Government Users Restricted Rights:
-# Use, duplication or disclosure restricted by GSA ADP Schedule
-# Contract with IBM Corp
 apiVersion: 1.0.0
 metadata:
-    generateName: wazidebugclient-
+  generateName: wazidev-
 components:
   - type: chePlugin
-    reference: https://raw.githubusercontent.com/jsswan/che-dev/master/zopendebug.yaml
+    id: ibm/wazi-developer/latest
+    alias: wazi-developer
+    preferences:
+      Zowe-Temp-Folder-Location: '{"folderPath": "/projects"}'
+      zopeneditor.zapp.useDefaultOnlineZappSchema: true
+  - type: chePlugin
+    reference: https://raw.githubusercontent.com/jsswan/che-dev/main/zopendebug.yaml
     alias: wazi-debug
+  - type: chePlugin
+    id: redhat/vscode-yaml/latest
+    alias: vscode-yaml
+  - type: dockerimage
+    alias: wazi-terminal
+    image: 'icr.io/wazi-code/ibm-wazi-developer-for-workspaces-codeready@sha256:6a032f2ebdf19f6b491832a8d897a97351636fef33cd29fc57f1bf36b8e6cba3'
+    memoryLimit: 640Mi
+    volumes:
+      - name: zowe
+        containerPath: /home/wazi/.zowe
+      - name: m2
+        containerPath: /home/wazi/.m2
+    mountSources: true
